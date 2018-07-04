@@ -4,33 +4,20 @@ const stateRepository = db.stateRepository;
 
 //Post a State
 exports.create = (req, res) => {
-    var tmpStateId = req.body.stateid;
-    if (tmpStateId == -1) {
-        res.status(400).send("State object not found");
-    }
-    stateRepository.findById(tmpStateId)
-        .then(stateObj => {
-            districtRepository.create(req.body)
-                .then(districtObj => {
-                    districtRepository.findById(districtObj.id,
-                        { include: { model: { State } } })
-                        .then(districtObjResult => {
-                            res.status(201).send(districtObjResult);
-                        });
-
-                    // stateObj.addDistricts(districtObj)
-                    //     .then(() => {
-                    //         res.status(201).send(districtObj);
-                    //     });
+    var district = districtRepository.build(req.body);
+    var state = stateRepository.build(req.body.state);
+    district.setState(state)
+        .then((districtResult) => {
+            districtRepository.findById(districtResult.id,
+                { include: { model: stateRepository } })
+                .then(districtResult => {
+                    res.status(201).send(districtResult);
                 });
-        })
-        .catch(message => {
-            res.status(500).send(message);
         });
 }
 //List a State
 exports.findAll = (req, res) => {
-    districtRepository.findAll({ inclulde: { model: State } })
+    districtRepository.findAll({ include: { model: stateRepository } })
         .then(districts => {
             res.status(200).send(districts);
         });
