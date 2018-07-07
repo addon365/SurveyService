@@ -1,8 +1,8 @@
 const env = {
-    database: 'dbtest',
+    database: 'survey',
     username: 'root',
-    password: 'password',
-    host: 'localhost',
+    password: 'p244w0rd',
+    host: 'addonmysql.ceceqnse9grp.ap-southeast-1.rds.amazonaws.com',
     dialect: 'mysql',
     pool: {
         max: 5,
