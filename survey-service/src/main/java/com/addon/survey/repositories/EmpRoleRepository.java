@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.addon.survey.model.EmpRole;
 
-@RepositoryRestResource(path = "api/roles")
+@RepositoryRestResource(path = "/roles")
 public interface EmpRoleRepository extends JpaRepository<EmpRole, Long> {
 
 }

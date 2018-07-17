@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.addon.survey.model.Place;
 
-@RepositoryRestResource(path = "api/places")
+@RepositoryRestResource(path = "/places")
 public interface PlaceRepository extends JpaRepository<Place, Long> {
 
 }

@@ -18,18 +18,18 @@ import com.addon.survey.helper.Password;
 import com.addon.survey.model.EmployeeLogin;
 import com.addon.survey.repositories.EmployeeLoginRepository;
 
-@RestController("api/auth")
+@RestController
 public class EmployeeLoginController {
 
 	@Autowired
 	EmployeeLoginRepository empLoginRepository;
 
-	@GetMapping
+	@GetMapping("/users")
 	public List<EmployeeLogin> findAll() {
 		return empLoginRepository.findAll();
 	}
 
-	@PostMapping("/validate")
+	@PostMapping("/login")
 	public ResponseEntity<?> validate(@RequestParam String userId, @RequestParam String password) {
 		EmployeeLogin empLoginInfo = empLoginRepository.findByUserId(userId);
 		if (empLoginInfo == null)
@@ -46,7 +46,7 @@ public class EmployeeLoginController {
 			return new ResponseEntity<CustomError>(new CustomError("User Not found"), HttpStatus.NOT_FOUND);
 	}
 
-	@PostMapping("/addlogin")
+	@PostMapping("/signup")
 	public ResponseEntity<?> add(@RequestBody EmployeeLogin loginInfo) {
 		EmployeeLogin empLoginInfo = empLoginRepository.findByUserId(loginInfo.getUserId());
 		if (empLoginInfo != null)
@@ -59,7 +59,7 @@ public class EmployeeLoginController {
 		return new ResponseEntity<EmployeeLogin>(empLoginRepository.save(loginInfo), HttpStatus.CREATED);
 	}
 
-	@GetMapping("/find/{userId}")
+	@GetMapping("/login/{userId}")
 	public ResponseEntity<?> findAll(@PathVariable String userId) {
 		EmployeeLogin login = empLoginRepository.findByUserId(userId);
 		if (login == null)

@@ -18,7 +18,7 @@ import com.addon.survey.model.EmployeeLogin;
 import com.addon.survey.repositories.EmployeeLoginRepository;
 import com.addon.survey.repositories.EmployeeRepository;
 
-@RestController("api/employees/")
+@RestController
 public class EmployeeController {
 
 	@Autowired
@@ -27,12 +27,12 @@ public class EmployeeController {
 	@Autowired
 	EmployeeLoginRepository empLoginRepository;
 
-	@GetMapping("/findAll")
+	@GetMapping("/employees")
 	public List<Employee> findAll() {
 		return employeeRepository.findAll();
 	}
 
-	@PostMapping("/addemp")
+	@PostMapping("/employees")
 	public ResponseEntity<?> add(@RequestBody Employee employee) {
 		EmployeeLogin loginInfo = empLoginRepository.findByUserId(employee.getEmployeeLogin().getUserId());
 		if (loginInfo != null) {

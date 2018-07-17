@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.addon.survey.model.Area;
 
-@RepositoryRestResource(path = "api/areas")
+@RepositoryRestResource(path = "/areas")
 public interface AreaRepository extends JpaRepository<Area, Long> {
 
 }

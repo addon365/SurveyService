@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.addon.survey.model.District;
 
-@RepositoryRestResource(path = "api/districts")
+@RepositoryRestResource(path = "/districts")
 public interface DistrictRepository extends JpaRepository<District, Long> {
 
 }

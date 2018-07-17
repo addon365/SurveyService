@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.addon.survey.model.Shop;
 
-@RepositoryRestResource(path = "api/shops")
+@RepositoryRestResource(path = "/shops")
 public interface ShopRepository extends JpaRepository<Shop, Long> {
 
 }
