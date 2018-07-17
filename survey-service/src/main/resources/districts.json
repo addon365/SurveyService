@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Ariyalur",
+    "code": "AR"
+  },
+  {
+    "name": "Chennai",
+    "code": "CH"
+  },
+  {
+    "name": "Coimbatore",
+    "code": "CO"
+  },
+  {
+    "name": "Cuddalore",
+    "code": "CU"
+  },
+  {
+    "name": "Dharmapuri",
+    "code": "DH"
+  },
+  {
+    "name": "Dindigul",
+    "code": "DI"
+  },
+  {
+    "name": "Erode",
+    "code": "ER"
+  },
+  {
+    "name": "Kanchipuram",
+    "code": "KC"
+  },
+  {
+    "name": "Kanniyakumari",
+    "code": "KK"
+  },
+  {
+    "name": "Karur",
+    "code": "KR"
+  },
+  {
+    "name": "Krishnagiri",
+    "code": "KR"
+  },
+  {
+    "name": "Madurai",
+    "code": "MA"
+  },
+  {
+    "name": "Nagapattinam",
+    "code": "NG"
+  },
+  {
+    "name": "Namakkal",
+    "code": "NM"
+  },
+  {
+    "name": "Nilgiris",
+    "code": "NI"
+  },
+  {
+    "name": "Perambalur",
+    "code": "PE"
+  },
+  {
+    "name": "Pudukkottai",
+    "code": "PU"
+  },
+  {
+    "name": "Ramanathapuram",
+    "code": "RA"
+  },
+  {
+    "name": "Salem",
+    "code": "SA"
+  },
+  {
+    "name": "Sivaganga",
+    "code": "SI"
+  },
+  {
+    "name": "Thanjavur",
+    "code": "TJ"
+  },
+  {
+    "name": "Theni",
+    "code": "TH"
+  },
+  {
+    "name": "Thoothukudi",
+    "code": "TK"
+  },
+  {
+    "name": "Tiruchirappalli",
+    "code": "TC"
+  },
+  {
+    "name": "Tirunelveli",
+    "code": "TI"
+  },
+  {
+    "name": "Tiruppur",
+    "code": "TP"
+  },
+  {
+    "name": "Tiruvallur",
+    "code": "TL"
+  },
+  {
+    "name": "Tiruvannamalai",
+    "code": "TV"
+  },
+  {
+    "name": "Tiruvarur",
+    "code": "TR"
+  },
+  {
+    "name": "Vellore",
+    "code": "VE"
+  },
+  {
+    "name": "Viluppuram",
+    "code": "VL"
+  },
+  {
+    "name": "Virudhunagar",
+    "code": "VR"
+  }
+]
