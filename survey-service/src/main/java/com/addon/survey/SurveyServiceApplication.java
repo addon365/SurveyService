@@ -1,5 +1,7 @@
 package com.addon.survey;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,8 +15,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+import org.springframework.util.FileCopyUtils;
 
 import com.addon.survey.helper.Password;
 import com.addon.survey.helper.SampleData;
@@ -80,8 +84,19 @@ public class SurveyServiceApplication implements CommandLineRunner {
 			employeeRepository.save(employee);
 		}
 		if (districtRepository.count() == 0) {
-			Path path = Paths.get(resourceLoader.getResource("classpath:districts.json").getURI());
-			String districtsJson = new String(Files.readAllBytes(path));
+
+			String districtsJson = "";
+			ClassPathResource cpr = new ClassPathResource("districts.json");
+			try {
+				byte[] bdata = FileCopyUtils.copyToByteArray(cpr.getInputStream());
+				districtsJson = new String(bdata, StandardCharsets.UTF_8);
+
+			} catch (IOException e) {
+
+			}
+			// Path path =
+			// Paths.get(resourceLoader.getResource("classpath:districts.json").getURI());
+			// districtsJson = new String(Files.readAllBytes(path));
 			Polity polity = polityRepository.save(SampleData.getPolity());
 
 			District[] districts = gson.fromJson(districtsJson, District[].class);
