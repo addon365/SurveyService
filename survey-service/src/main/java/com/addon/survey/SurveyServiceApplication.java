@@ -2,9 +2,6 @@ package com.addon.survey;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
@@ -15,6 +12,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
@@ -37,7 +36,7 @@ import com.google.gson.Gson;
 
 @SpringBootApplication
 @EntityScan(basePackageClasses = { SurveyServiceApplication.class, Jsr310JpaConverters.class })
-public class SurveyServiceApplication implements CommandLineRunner {
+public class SurveyServiceApplication extends SpringBootServletInitializer implements CommandLineRunner {
 
 	@Autowired
 	ResourceLoader resourceLoader;
@@ -58,6 +57,11 @@ public class SurveyServiceApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SurveyServiceApplication.class, args);
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(SurveyServiceApplication.class);
 	}
 
 	@Override
