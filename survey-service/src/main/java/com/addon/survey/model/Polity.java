@@ -1,12 +1,10 @@
 package com.addon.survey.model;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Polity {
@@ -14,16 +12,6 @@ public class Polity {
 	private Long id;
 	private String name;
 	private String code;
-	private Set<District> districts;
-
-	@OneToMany(mappedBy = "polity")
-	public Set<District> getDistricts() {
-		return districts;
-	}
-
-	public void setDistricts(Set<District> districts) {
-		this.districts = districts;
-	}
 
 	public Polity(String name, String code) {
 		super();

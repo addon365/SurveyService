@@ -14,9 +14,8 @@ public class SampleData {
 
 	public static Polity getPolity() {
 		Polity polity = new Polity("Tamil Nadu", "TN");
-		Set<District> districts = new HashSet<District>();
-		districts.add(new District("Cuddalore", "CDL"));
-		polity.setDistricts(districts);
+		
+		
 		return polity;
 
 	}
