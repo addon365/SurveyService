@@ -6,7 +6,7 @@
 	<groupId>com.addon</groupId>
 	<artifactId>survey-service</artifactId>
 	<version>0.0.5-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>survey-service</name>
 	<description>Survey Service</description>
